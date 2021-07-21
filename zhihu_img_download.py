@@ -5,7 +5,7 @@ import aiohttp
 import asyncio
 
 try:
-    qid = int(input("请输入文章ID："))
+    qid = int(input("questionID："))
     header = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) '
                       'AppleWebKit/537.36 (KHTML, '
@@ -15,7 +15,7 @@ try:
         'Referer': f"https://www.zhihu.com/question/{qid}"
     }
 except:
-    print("questionID：")
+    print("QuestionID Error")
 
 async def answer(url_):
     async with aiohttp.ClientSession() as session:
