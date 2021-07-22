@@ -76,9 +76,6 @@ async def sava_image(img_urls):
             async with session.get(img_url) as reps:
                 async with aiofiles.open("images/" + local_path, mode="wb") as f:
                     await f.write(await reps.content.read())
-                    # time.sleep(0.2)
-    # time.sleep(0.5)
-    # print("全部下载完成")
 
 
 async def main():
