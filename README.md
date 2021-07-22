@@ -11,6 +11,8 @@
 
   v1.2 添加异常处理
 
+  v1.3 修复已知Bug
+  
 ## 说明：
 Question ID 即 question后面跟的id
 如
