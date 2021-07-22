@@ -1,5 +1,9 @@
 # zhihu_img_download 知乎图片下载小工具
 
+## 安装
+    pip install aiofiles
+    pip install aiohttp
+    pip install asyncio
 
 ## 工具介绍 
   v1.1 使用多线程异步协程，提高图片下载效率
