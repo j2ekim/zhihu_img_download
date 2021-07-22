@@ -3,6 +3,7 @@ import re
 import aiofiles
 import aiohttp
 import asyncio
+import time
 
 try:
     qid = int(input("questionID："))
@@ -69,10 +70,14 @@ async def sava_image(img_urls):
         # print(local_path)
         print(img_url)
         dir_path = 'images/'
+        if not os.path.exists(dir_path):
+            os.mkdir(dir_path)
         async with aiohttp.ClientSession() as session:  # reqs2 = requests.get(line)
             async with session.get(img_url) as reps:
-                async with aiofiles.open(dir_path + local_path, mode="wb") as f:
+                async with aiofiles.open("images/" + local_path, mode="wb") as f:
                     await f.write(await reps.content.read())
+                    # time.sleep(0.2)
+    time.sleep(0.5)
 
 async def main():
     url = f"https://www.zhihu.com/api/v4/questions/{qid}/answers?include=data%5B%2A%5D.is_normal%2Cadmin_closed_comment%2Creward_info%2Cis_collapsed%2Cannotation_action%2Cannotation_detail%2Ccollapse_reason%2Cis_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2Cvoteup_count%2Creshipment_settings%2Ccomment_permission%2Ccreated_time%2Cupdated_time%2Creview_info%2Crelevant_info%2Cquestion%2Cexcerpt%2Crelationship.is_authorized%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2Cis_labeled%2Cis_recognized%2Cpaid_info%3Bdata%5B%2A%5D.mark_infos%5B%2A%5D.url%3Bdata%5B%2A%5D.author.follower_count%2Cbadge%5B%2A%5D.topics&limit=5&offset=0&platform=desktop&sort_by=default"
