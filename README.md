@@ -1,6 +1,7 @@
 # zhihu_img_download 知乎图片下载小工具
 
 ## 安装
+    git clone https://github.com/j2ekim/zhihu_img_download
     pip install aiofiles
     pip install aiohttp
     pip install asyncio
