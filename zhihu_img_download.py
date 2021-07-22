@@ -74,7 +74,7 @@ async def sava_image(img_urls):
             os.mkdir(dir_path)
         async with aiohttp.ClientSession() as session:  # reqs2 = requests.get(line)
             async with session.get(img_url) as reps:
-                async with aiofiles.open("images/" + local_path, mode="wb") as f:
+                async with aiofiles.open(dir_path + local_path, mode="wb") as f:
                     await f.write(await reps.content.read())
 
 
