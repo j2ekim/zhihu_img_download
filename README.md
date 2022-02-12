@@ -1,5 +1,8 @@
 # ~~zhihu_img_download 知乎图片下载小工具~~   2022年2月 **已失效**
 
+## 修复计划
+目前正在调试中 = = 
+
 ## 安装
     git clone https://github.com/j2ekim/zhihu_img_download
     pip install aiofiles
