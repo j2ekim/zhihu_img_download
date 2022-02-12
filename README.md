@@ -26,4 +26,4 @@ https://www.zhihu.com/question/413335760/answer/1447589559
 
 Question ID 为 413335760
 
-![image](./img2.png)
+![](https://cdn.jsdelivr.net/gh/j2ekim/zhihu_img_download/img2.png)
